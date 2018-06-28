@@ -40,7 +40,7 @@ public class Gui extends JFrame{
         m.setIcon(new ImageIcon(getClass().getResource("Down.png")));
         m.setBounds(135, 10, WIDTH, HEIGHT);
         
-        n.setIcon(new ImageIcon(getClass().getResource("dot.png")));
+        n.setIcon(new ImageIcon(getClass().getResource("ERight.png")));
         n.setBounds(10, 150, WIDTH, HEIGHT);
         enemigo = new Enemigo(250, n, m, n.getX(), n.getY());
         enemigo.start();
