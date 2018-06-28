@@ -37,13 +37,13 @@ public class Gui extends JFrame{
         container.add(n);
         container.add(m);
         
+        m.setIcon(new ImageIcon(getClass().getResource("Down.png")));
+        m.setBounds(135, 10, WIDTH, HEIGHT);
+        
         n.setIcon(new ImageIcon(getClass().getResource("dot.png")));
         n.setBounds(10, 150, WIDTH, HEIGHT);
-        enemigo = new Enemigo(250, n, n.getX(), n.getY());
+        enemigo = new Enemigo(250, n, m, n.getX(), n.getY());
         enemigo.start();
-
-        m.setIcon(new ImageIcon(getClass().getResource("Down.png")));
-        m.setBounds(135, 50, WIDTH, HEIGHT);
     }
     
     private class TAdapter extends KeyAdapter {
