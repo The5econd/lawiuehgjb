@@ -20,7 +20,7 @@ import movimiento.Enemigo;
  */
 public class Gui extends JFrame{
     
-    JLabel n = new JLabel();
+    JLabel e = new JLabel();
     JLabel m = new JLabel();
     Enemigo enemigo;
     private int WIDTH = 30, HEIGHT = 30;
@@ -34,15 +34,15 @@ public class Gui extends JFrame{
         setLayout(null);
         setSize(300, 300);
         Container container = getContentPane();
-        container.add(n);
+        container.add(e);
         container.add(m);
         
         m.setIcon(new ImageIcon(getClass().getResource("Down.png")));
         m.setBounds(135, 10, WIDTH, HEIGHT);
         
-        n.setIcon(new ImageIcon(getClass().getResource("ERight.png")));
-        n.setBounds(10, 150, WIDTH, HEIGHT);
-        enemigo = new Enemigo(250, n, m, n.getX(), n.getY());
+        e.setIcon(new ImageIcon(getClass().getResource("ERight.png")));
+        e.setBounds(10, 150, WIDTH, HEIGHT);
+        enemigo = new Enemigo(250, e, m, e.getX(), e.getY());
         enemigo.start();
     }
     
@@ -52,6 +52,37 @@ public class Gui extends JFrame{
         public void keyPressed(KeyEvent e) {
 
             int key = e.getKeyCode();
+            if (key == KeyEvent.VK_NUMPAD7) {
+                if (m.getX() >= 20 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() - 10, m.getY() - 10, WIDTH, HEIGHT);
+                }
+
+            }
+            
+            if (key == KeyEvent.VK_NUMPAD9) {
+                if (m.getX() >= 20 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() + 10, m.getY() - 10, WIDTH, HEIGHT);
+                }
+
+            }
+            
+            if (key == KeyEvent.VK_NUMPAD3) {
+                if (m.getX() >= 20 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() + 10, m.getY() + 10, WIDTH, HEIGHT);
+                }
+
+            }
+            
+            if (key == KeyEvent.VK_NUMPAD1) {
+                if (m.getX() >= 20 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() - 10, m.getY() + 10, WIDTH, HEIGHT);
+                }
+
+            }
             
             if (key == KeyEvent.VK_LEFT) {
                 if (m.getX() >= 10 && m.getX() < 300) {
@@ -60,20 +91,52 @@ public class Gui extends JFrame{
                 }
 
             }
+            
+            /*if (key == KeyEvent.VK_LEFT && key== KeyEvent.VK_UP) {
+                if (m.getX() >= 10 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() - 10, m.getY() - 10, WIDTH, HEIGHT);
+                }
+
+            }
+            if (key == KeyEvent.VK_LEFT && key== KeyEvent.VK_DOWN) {
+                if (m.getX() >= 10 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() - 10, m.getY() + 10, WIDTH, HEIGHT);
+                }
+
+            }*/
+            
             if (key == KeyEvent.VK_RIGHT) {
                 if (m.getX() >= 0 && m.getX() <= 250) {
                     m.setIcon(new ImageIcon(getClass().getResource("Right.png")));
                     m.setBounds(m.getX() + 10, m.getY(), WIDTH, HEIGHT);
                 }
             }
-            if (key == KeyEvent.VK_UP) {
+            
+            /*if (key == KeyEvent.VK_RIGHT && key== KeyEvent.VK_DOWN) {
+                if (m.getX() >= 10 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() + 10, m.getY() + 10, WIDTH, HEIGHT);
+                }
+
+            }
+            
+            if (key == KeyEvent.VK_RIGHT && key== KeyEvent.VK_UP) {
+                if (m.getX() >= 10 && m.getX() < 300) {
+                    m.setIcon(new ImageIcon(getClass().getResource("Left.png")));
+                    m.setBounds(m.getX() + 10, m.getY() - 10, WIDTH, HEIGHT);
+                }
+
+            }*/
+            if (key == KeyEvent.VK_UP ) {
                 if (m.getY() >= 10 && m.getY() < 300) {
                     m.setIcon(new ImageIcon(getClass().getResource("Up.png")));
                     m.setBounds(m.getX(), m.getY() - 10, WIDTH, HEIGHT);
                 }
             }
             if (key == KeyEvent.VK_DOWN) {
-                if (m.getY() >= 0 && m.getY() <= 220) {
+                if (m.getY() >= 0 && m.getY() <= 250) {
                     m.setIcon(new ImageIcon(getClass().getResource("Down.png")));
                     m.setBounds(m.getX(), m.getY() + 10, WIDTH, HEIGHT);
                 }
